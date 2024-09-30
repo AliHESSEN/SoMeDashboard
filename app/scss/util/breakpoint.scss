@@ -1,0 +1,32 @@
+// Define a map of "breakpoints-up" where the key is a size label and the value is the minimum width for that breakpoint
+$breakpoints-up: (
+	'medium': '40em',      // 640px (min-width)
+	'large': '71.875em',    // 1150px (min-width)
+	'xlarge': '87.5em',     // 1400px (min-width)
+);
+
+// Define a map of "breakpoints-down" where the key is a size label and the value is the maximum width for that breakpoint
+$breakpoints-down: (
+	'small': '39.9375em',   // 639px (max-width)
+	'medium': '71.8125em',  // 1149px (max-width)
+	'large': '87.4375em',   // 1399px (max-width)
+);
+
+// Mixin for targeting styles at a specific "min-width" breakpoint
+// Takes a size label as argument and uses the "min-width" value from $breakpoints-up
+@mixin breakpoint($size) {
+	@media (min-width: map-get($breakpoints-up, $size)) { // Media query for min-width based on $size
+		@content; // Placeholder for any content inside this mixin
+	}
+}
+
+// Mixin for targeting styles at a specific "max-width" breakpoint
+// Takes a size label as argument and uses the "max-width" value from $breakpoints-down
+@mixin breakpoint-down($size) {
+	@media (max-width: map-get($breakpoints-down, $size)) { // Media query for max-width based on $size
+		@content; // Placeholder for any content inside this mixin
+	}
+}
+
+
+

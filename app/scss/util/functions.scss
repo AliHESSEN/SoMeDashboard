@@ -1,0 +1,11 @@
+// Function to convert pixel values to rem units
+// Takes two arguments: 
+// - $pixels: the pixel value to convert
+// - $context: the base font size (default is 16px)
+
+@function rem($pixels, $context: 16) {
+    // Return the calculated rem value
+    @return ($pixels / $context) * 1rem;
+}
+
+

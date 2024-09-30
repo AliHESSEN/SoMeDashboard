@@ -1,0 +1,4 @@
+// this will be used for variables, functions and sass mixens
+
+@forward 'breakpoints'; // gets access to all variables, functions and mixins from breakpoints file
+@forward 'functions';
